@@ -1,1 +1,1 @@
-web: gunicorn todorestapi.wsgi
+web: gunicorn TodoAPI.wsgi.py
