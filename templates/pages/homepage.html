@@ -1,12 +1,146 @@
 {% extends 'base.html' %}
 {% block title %}
-    Homepage
+    Anasayfa
 {% endblock %}
 {% block content %}
-    <div class="list-group">
-      <a href="{% url 'user_list' %}" class="list-group-item list-group-item-action active" aria-current="true">
-        User List
-      </a>
-      <a href="{% url 'todo_list' %}" class="list-group-item list-group-item-action">Todo List</a>
+    <div class="container">
+        <small>Docs created by Mertcan Öncül</small>
+        <header class="header">
+            <h1>Fetch Api Dökümantasyonu</h1>
+        </header>
+
+
+        <main class="main">
+            <div class="content">
+                <h2 class="todo content-title" id="all-todo">Todo List Api</h2>
+                <div class="list-api">
+                    <h3 id="todos">Tüm Todoların Url</h3>
+                    <p class="content-url">
+                        https://todorestapi-20432433159e.herokuapp.com/api/todos/
+                    </p>
+                    <h3>Fetch Örneği</h3>
+                    <p class="content-url">
+                        fetch("https://todorestapi-20432433159e.herokuapp.com/api/todos/")
+                    </p>
+
+                    <hr>
+
+                    <h3 id="todo-one">Tek Todo Url</h3>
+                    <p class="content-url">
+                        https://todorestapi-20432433159e.herokuapp.com/api/todos/1/
+                    </p>
+                    <h3>Fetch Örneği</h3>
+                    <p class="content-url">
+                        fetch("https://todorestapi-20432433159e.herokuapp.com/api/todos/${id}/")
+                    </p>
+
+                    <hr>
+
+                    <h3 id="create-todo">Create Todo Url</h3>
+                    <p class="content-url">
+                        https://todorestapi-20432433159e.herokuapp.com/api/todos/create/
+                    </p>
+                    <h3>Fetch Örneği</h3>
+                    <pre class="content-url">
+<code>
+fetch('https://todorestapi-20432433159e.herokuapp.com/api/todos/create/', {
+    method: 'POST',
+    body: JSON.stringify({
+        title: string,
+        completed: boolean,
+        actor: actorId,
+        assignee: assigneeId
+    }),
+    headers: {
+        'Content-type': 'application/json;'
+    }
+})
+</code>
+                    </pre>
+                    <hr>
+
+                    <h3 id="update-todo">Update Todo Url</h3>
+                    <p class="content-url" >
+                        https://todorestapi-20432433159e.herokuapp.com/api/todos/update/${id}/
+                    </p>
+                    <h3>Fetch Örneği</h3>
+                    <pre class="content-url">
+<code>
+fetch(`https://todorestapi-20432433159e.herokuapp.com/api/todos/update/${id}/`, {
+    method: 'PUT',
+    body: JSON.stringify({
+        title: string,
+        completed: boolean,
+        actor: actorId,
+        assignee: assigneeId
+    }),
+    headers: {
+        'Content-type': 'application/json;'
+    }
+})
+</code>
+                    </pre>
+                    <hr>
+
+                    <h3 id="delete-todo">Delete Todo Url</h3>
+                    <p class="content-url">
+                        https://todorestapi-20432433159e.herokuapp.com/api/todos/delete/${id}/
+                    </p>
+                    <h3>Fetch Örneği</h3>
+                    <pre class="content-url">
+<code>
+    fetch(`https://todorestapi-20432433159e.herokuapp.com/api/todos/delete/${id}/`, {
+        method: 'DELETE'
+    })
+</code>
+                    </pre>
+                </div>
+
+                <h2 class="todo content-title" id="users">Users Api</h2>
+                <div class="list-api">
+                    <h3>Tüm Kullanıcıların Url</h3>
+                    <p class="content-url">
+                        https://todorestapi-20432433159e.herokuapp.com/api/users/
+                    </p>
+                    <h3>Fetch Örneği</h3>
+                    <p class="content-url">
+                        fetch("https://todorestapi-20432433159e.herokuapp.com/api/users/")
+                    </p>
+
+                    <hr>
+
+                    <h3>Tek Kullanıcının Url</h3>
+                    <pre class="content-url">
+                        https://todorestapi-20432433159e.herokuapp.com/api/users/1/
+                    </pre>
+                    <h3>Fetch Örneği</h3>
+
+                    <pre class="content-url">
+                        fetch("https://todorestapi-20432433159e.herokuapp.com/api/users/${id}/")
+                    </pre>
+                </div>
+            </div>
+            <aside class="aside">
+                <ul>
+                    <li>
+                        <a href="#all-todo">Tüm Todolar</a>
+                        <ul>
+                            <li><a href="#todos">Todos</a></li>
+                            <li><a href="#todo-one">Todo</a></li>
+                            <li><a href="#create-todo">Create Todo</a></li>
+                            <li><a href="#update-todo">Update Todo</a></li>
+                            <li><a href="#delete-todo">Delete Todo</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#users">Users</a>
+                    </li>
+                </ul>
+            </aside>
+        </main>
+
+        <footer>
+            Developed for <a href="#">Acunmedya Akademi</a> ❤
+        </footer>
     </div>
 {% endblock %}
