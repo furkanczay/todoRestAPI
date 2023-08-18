@@ -23,6 +23,7 @@ INSTALLED_APPS += [
 
 MIDDLEWARE += [
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [
