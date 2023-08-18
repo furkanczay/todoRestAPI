@@ -8,3 +8,5 @@ DATABASES = {
 }
 
 DEBUG = False
+
+ALLOWED_HOSTS += ["https://todorestapi-20432433159e.herokuapp.com/"]
