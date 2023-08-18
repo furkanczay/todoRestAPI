@@ -34,3 +34,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5504',
     'http://localhost:5505',
 ]
+
+
+CORS_ALLOW_ALL_ORIGINS = True
