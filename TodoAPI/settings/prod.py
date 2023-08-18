@@ -14,3 +14,8 @@ DATABASES = {
 DEBUG = False
 
 ALLOWED_HOSTS += ["todorestapi-20432433159e.herokuapp.com"]
+
+INSTALLED_APPS += [
+    'rest_framework',
+    'todos'
+]
